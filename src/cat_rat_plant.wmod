@@ -1,0 +1,6471 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<Module xmlns="http://waters.sourceforge.net/xsd/module" xmlns:B="http://waters.sourceforge.net/xsd/base" Name="FINALREDUZIDO">
+<B:Comment></B:Comment>
+<EventDeclList>
+<EventDecl Kind="PROPOSITION" Name=":accepting"/>
+<EventDecl Kind="PROPOSITION" Name=":forbidden"/>
+<EventDecl Kind="UNCONTROLLABLE" Name="RatoL"/>
+<EventDecl Kind="UNCONTROLLABLE" Name="RatoR"/>
+<EventDecl Kind="CONTROLLABLE" Name="GatoL"/>
+<EventDecl Kind="CONTROLLABLE" Name="GatoR"/>
+<EventDecl Kind="CONTROLLABLE" Name="GatoIsOpen"/>
+<EventDecl Kind="CONTROLLABLE" Name="GatoIsClosed"/>
+<EventDecl Kind="CONTROLLABLE" Name="DoorIsOpenL"/>
+<EventDecl Kind="CONTROLLABLE" Name="DoorIsClosedL"/>
+<EventDecl Kind="CONTROLLABLE" Name="DoorIsClosedR"/>
+<EventDecl Kind="CONTROLLABLE" Name="DoorIsOpenR"/>
+<EventDecl Kind="CONTROLLABLE" Name="DoorIsOpenLGato"/>
+<EventDecl Kind="CONTROLLABLE" Name="DoorIsOpenRGato"/>
+<EventDecl Kind="CONTROLLABLE" Name="DoorIsClosedLGato"/>
+<EventDecl Kind="CONTROLLABLE" Name="DoorIsClosedRGato"/>
+</EventDeclList>
+<ComponentList>
+<SimpleComponent Kind="PLANT" Name="Gato_Porta">
+<Graph>
+<NodeList>
+<SimpleNode Initial="true" Name="Room1">
+<PointGeometry>
+<Point X="106" Y="118"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room2">
+<PointGeometry>
+<Point X="227" Y="58"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room3">
+<PointGeometry>
+<Point X="442" Y="199"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room4">
+<PointGeometry>
+<Point X="343" Y="434"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room5">
+<PointGeometry>
+<Point X="94" Y="373"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door23">
+<PointGeometry>
+<Point X="359" Y="90"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door34">
+<PointGeometry>
+<Point X="436" Y="335"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door45">
+<PointGeometry>
+<Point X="208" Y="449"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door50">
+<PointGeometry>
+<Point X="53" Y="243"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="Room1" Target="Room2">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="156" Y="68"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2" Target="Door23">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="298" Y="52"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23" Target="Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="-39" Y="17"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Door23" Target="Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="30" Y="-26"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="418" Y="131"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3" Target="Door23">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="-30" Y="20"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34" Target="Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="-93" Y="-17"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3" Target="Door34">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="461" Y="268"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34" Target="Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="20"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="406" Y="399"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4" Target="Door34">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4" Target="Door45">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="278" Y="463"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45" Target="Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="-45" Y="-45"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45" Target="Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="-77" Y="5"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="139" Y="429"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5" Target="Door45">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5" Target="Door50">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="53" Y="315"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50" Target="Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="17" Y="-16"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50" Target="Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="-101" Y="-46"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="59" Y="172"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1" Target="Door50">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2" Target="Room1">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+<SimpleComponent Kind="PLANT" Name="Rato_Porta">
+<Graph>
+<NodeList>
+<SimpleNode Name="Room1">
+<PointGeometry>
+<Point X="106" Y="118"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room2">
+<PointGeometry>
+<Point X="227" Y="58"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Initial="true" Name="Room3">
+<PointGeometry>
+<Point X="442" Y="199"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room4">
+<PointGeometry>
+<Point X="343" Y="434"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room5">
+<PointGeometry>
+<Point X="94" Y="373"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door23">
+<PointGeometry>
+<Point X="359" Y="90"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door34">
+<PointGeometry>
+<Point X="436" Y="335"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door45">
+<PointGeometry>
+<Point X="208" Y="449"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door50">
+<PointGeometry>
+<Point X="53" Y="243"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="Room1" Target="Room2">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="156" Y="68"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2" Target="Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="298" Y="52"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23" Target="Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="-56" Y="20"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Door23" Target="Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<LabelGeometry Anchor="NW">
+<Point X="12" Y="-27"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="418" Y="131"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3" Target="Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34" Target="Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="-116" Y="-25"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3" Target="Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="461" Y="268"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34" Target="Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<LabelGeometry Anchor="NW">
+<Point X="23" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="406" Y="399"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4" Target="Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="-28" Y="-33"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4" Target="Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="278" Y="463"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45" Target="Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="-31" Y="-57"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45" Target="Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<LabelGeometry Anchor="NW">
+<Point X="-41" Y="18"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="139" Y="429"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5" Target="Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5" Target="Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="53" Y="315"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50" Target="Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="12" Y="-14"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50" Target="Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<LabelGeometry Anchor="NW">
+<Point X="-92" Y="-41"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="59" Y="172"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1" Target="Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2" Target="Room1">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+<SimpleComponent Kind="PLANT" Name="Gato_Porta||Rato_Porta">
+<Graph>
+<NodeList>
+<SimpleNode Name="Door23.Door23">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+<SimpleIdentifier Name=":forbidden"/>
+</EventList>
+<PointGeometry>
+<Point X="509" Y="410"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-53" Y="-36"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door23.Door34">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="714" Y="766"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door23.Door45">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="626" Y="1067"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="20"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door23.Door50">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="377" Y="823"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-69" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door23.Room1">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="330" Y="614"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door23.Room2">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="393" Y="439"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="9" Y="11"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door23.Room3">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="644" Y="539"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="7" Y="20"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door23.Room4">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="705" Y="975"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door23.Room5">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="503" Y="1012"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door34.Door23">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="873" Y="249"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door34.Door34">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+<SimpleIdentifier Name=":forbidden"/>
+</EventList>
+<PointGeometry>
+<Point X="1055" Y="571"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door34.Door45">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="970" Y="884"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door34.Door50">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="753" Y="650"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-79" Y="-25"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door34.Room1">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="722" Y="429"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door34.Room2">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="760" Y="265"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-23" Y="16"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door34.Room3">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="985" Y="368"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-14" Y="33"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door34.Room4">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="1047" Y="776"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door34.Room5">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="848" Y="831"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door45.Door23">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="684" Y="71"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door45.Door34">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="875" Y="408"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door45.Door45">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+<SimpleIdentifier Name=":forbidden"/>
+</EventList>
+<PointGeometry>
+<Point X="778" Y="739"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-28" Y="53"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door45.Door50">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="552" Y="486"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-28" Y="11"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door45.Room1">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="524" Y="263"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-4" Y="29"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door45.Room2">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="576" Y="99"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="3" Y="14"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door45.Room3">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="803" Y="195"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-8" Y="-22"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door45.Room4">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="863" Y="616"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door45.Room5">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="662" Y="681"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-19" Y="25"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door50.Door23">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="284" Y="179"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-82" Y="-85"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door50.Door34">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="471" Y="534"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door50.Door45">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="369" Y="873"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-13" Y="22"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door50.Door50">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+<SimpleIdentifier Name=":forbidden"/>
+</EventList>
+<PointGeometry>
+<Point X="161" Y="637"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="8" Y="14"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door50.Room1">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="128" Y="400"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door50.Room2">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="173" Y="222"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-79" Y="-42"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door50.Room3">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="402" Y="291"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door50.Room4">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="458" Y="763"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Door50.Room5">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="254" Y="806"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room1.Door23">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="210" Y="293"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="4" Y="-20"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room1.Door34">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="415" Y="634"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room1.Door45">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="334" Y="973"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room1.Door50">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="97" Y="743"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room1.Room1">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+<SimpleIdentifier Name=":forbidden"/>
+</EventList>
+<PointGeometry>
+<Point X="57" Y="522"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-101" Y="-3"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room1.Room2">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="102" Y="343"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-105" Y="-31"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Initial="true" Name="Room1.Room3">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="319" Y="372"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room1.Room4">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="427" Y="871"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="11" Y="19"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room1.Room5">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="201" Y="921"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="20" Y="0"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room2.Door23">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="291" Y="398"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="13" Y="-3"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room2.Door34">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="515" Y="727"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-27" Y="16"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room2.Door45">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="430" Y="1056"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room2.Door50">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="179" Y="817"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-33" Y="-31"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room2.Room1">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="135" Y="599"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="13" Y="-27"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room2.Room2">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+<SimpleIdentifier Name=":forbidden"/>
+</EventList>
+<PointGeometry>
+<Point X="189" Y="438"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-10" Y="25"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room2.Room3">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="423" Y="498"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room2.Room4">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="521" Y="948"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room2.Room5">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="294" Y="1005"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room3.Door23">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="736" Y="352"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="18" Y="6"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room3.Door34">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="929" Y="688"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room3.Door45">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="836" Y="998"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="15"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room3.Door50">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="612" Y="769"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room3.Room1">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="566" Y="553"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-35" Y="18"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room3.Room2">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="614" Y="375"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-97" Y="-45"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room3.Room3">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+<SimpleIdentifier Name=":forbidden"/>
+</EventList>
+<PointGeometry>
+<Point X="860" Y="480"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room3.Room4">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="911" Y="901"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="1" Y="20"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room3.Room5">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="721" Y="938"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room4.Door23">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="850" Y="130"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="14" Y="-1"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room4.Door34">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="1029" Y="465"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room4.Door45">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="949" Y="774"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="1" Y="8"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room4.Door50">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="732" Y="540"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-26" Y="46"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room4.Room1">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="693" Y="312"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="10" Y="-10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room4.Room2">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="739" Y="148"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-108" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room4.Room3">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="964" Y="257"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="28" Y="-14"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room4.Room4">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+<SimpleIdentifier Name=":forbidden"/>
+</EventList>
+<PointGeometry>
+<Point X="1025" Y="665"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-1" Y="26"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room4.Room5">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="835" Y="720"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room5.Door23">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="465" Y="88"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-42" Y="-44"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room5.Door34">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="648" Y="437"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room5.Door45">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="551" Y="789"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room5.Door50">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="324" Y="531"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-92" Y="-21"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room5.Room1">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="305" Y="294"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room5.Room2">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="358" Y="121"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-1" Y="43"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room5.Room3">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="581" Y="210"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="5" Y="5"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room5.Room4">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="628" Y="658"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-49" Y="-20"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Room5.Room5">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+<SimpleIdentifier Name=":forbidden"/>
+</EventList>
+<PointGeometry>
+<Point X="426" Y="716"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-10" Y="9"/>
+</LabelGeometry>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="Door23.Door23" Target="Door23.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="449" Y="428"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Door23" Target="Door23.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="575" Y="478"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Door23" Target="Room2.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="392" Y="409"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Door23" Target="Room3.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="628" Y="385"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Door34" Target="Door23.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="697" Y="656"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Door34" Target="Door23.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="721" Y="881"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Door34" Target="Room2.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="616" Y="762"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Door34" Target="Room3.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="839" Y="734"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Door45" Target="Door23.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="680" Y="1045"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Door45" Target="Door23.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="560" Y="1068"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Door45" Target="Room2.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="527" Y="1094"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Door45" Target="Room3.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="741" Y="1063"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Door50" Target="Door23.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="350" Y="721"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Door50" Target="Door23.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="436" Y="923"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Door50" Target="Room2.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="266" Y="842"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Door50" Target="Room3.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="497" Y="804"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Room1" Target="Door23.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="330" Y="726"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Room1" Target="Door23.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="362" Y="530"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Room1" Target="Room2.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="220" Y="619"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Room1" Target="Room3.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="444" Y="597"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Room2" Target="Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="444" Y="406"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Room2" Target="Door23.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="344" Y="519"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Room2" Target="Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="283" Y="447"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Room2" Target="Room3.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="508" Y="391"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Room3" Target="Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="584" Y="460"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Room3" Target="Door23.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="676" Y="659"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Room3" Target="Room2.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="536" Y="525"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Room3" Target="Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="763" Y="517"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Room4" Target="Door23.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="701" Y="884"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Room4" Target="Door23.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="662" Y="1033"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Room4" Target="Room2.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="612" Y="989"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Room4" Target="Room3.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="820" Y="965"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Room5" Target="Door23.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="569" Y="1048"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Room5" Target="Door23.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="428" Y="940"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Room5" Target="Room2.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="392" Y="1038"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door23.Room5" Target="Room3.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="618" Y="1001"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Door23" Target="Door34.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="826" Y="257"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Door23" Target="Door34.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="951" Y="292"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Door23" Target="Room3.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="821" Y="302"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Door23" Target="Room4.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="864" Y="180"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Door34" Target="Door34.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1046" Y="471"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Door34" Target="Door34.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1084" Y="676"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Door34" Target="Room3.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1014" Y="639"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Door34" Target="Room4.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1071" Y="512"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Door45" Target="Door34.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1036" Y="847"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Door45" Target="Door34.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="915" Y="877"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Door45" Target="Room3.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="925" Y="966"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Door45" Target="Room4.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="987" Y="834"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Door50" Target="Door34.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="751" Y="547"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Door50" Target="Door34.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="801" Y="749"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Door50" Target="Room3.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="694" Y="726"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Door50" Target="Room4.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="761" Y="592"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Room1" Target="Door34.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="750" Y="528"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Room1" Target="Door34.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="763" Y="343"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Room1" Target="Room3.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="655" Y="498"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Room1" Target="Room4.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="702" Y="366"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Room2" Target="Door34.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="823" Y="235"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Room2" Target="Door34.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="737" Y="338"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Room2" Target="Room3.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="676" Y="309"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Room2" Target="Room4.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="767" Y="192"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Room3" Target="Door34.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="935" Y="306"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Room3" Target="Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1040" Y="454"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Room3" Target="Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="942" Y="430"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Room3" Target="Room4.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="981" Y="306"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Room4" Target="Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1063" Y="677"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Room4" Target="Door34.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1018" Y="834"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Room4" Target="Room3.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1002" Y="854"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Room4" Target="Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1065" Y="721"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Room5" Target="Door34.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="924" Y="857"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Room5" Target="Door34.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="819" Y="741"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Room5" Target="Room3.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="800" Y="905"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door34.Room5" Target="Room4.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="863" Y="780"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Door23" Target="Door45.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="633" Y="77"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Door23" Target="Door45.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="732" Y="136"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Door23" Target="Room4.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="772" Y="91"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Door23" Target="Room5.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="575" Y="67"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Door34" Target="Door45.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="860" Y="288"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Door34" Target="Door45.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="878" Y="506"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Door34" Target="Room4.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door34" Target="Room5.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="771" Y="432"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Door45" Target="Door45.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="839" Y="686"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Door45" Target="Door45.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="720" Y="725"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Door45" Target="Room4.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="871" Y="775"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Door45" Target="Room5.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="673" Y="793"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Door50" Target="Door45.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="547" Y="365"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Door50" Target="Door45.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="618" Y="588"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Door50" Target="Room4.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="642" Y="517"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Door50" Target="Room5.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="436" Y="499"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Room1" Target="Door45.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="526" Y="367"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Room1" Target="Door45.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="557" Y="171"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Room1" Target="Room4.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Room1" Target="Room5.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="413" Y="270"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Room2" Target="Door45.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="627" Y="56"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Room2" Target="Door45.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="536" Y="166"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Room2" Target="Room4.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="659" Y="116"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Room2" Target="Room5.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="462" Y="106"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Room3" Target="Door45.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="756" Y="111"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Room3" Target="Door45.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="841" Y="297"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Room3" Target="Room4.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="892" Y="220"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Room3" Target="Room5.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="696" Y="198"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Room4" Target="Door45.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="896" Y="513"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Room4" Target="Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Room4" Target="Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="954" Y="650"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Room4" Target="Room5.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="750" Y="642"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Room5" Target="Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="730" Y="706"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Room5" Target="Door45.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="608" Y="572"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Room5" Target="Room4.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="753" Y="714"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door45.Room5" Target="Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="549" Y="710"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Door23" Target="Door50.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="221" Y="196"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Door23" Target="Door50.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="346" Y="216"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Door23" Target="Room1.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="243" Y="231"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Door23" Target="Room5.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="371" Y="131"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Door34" Target="Door50.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="424" Y="409"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Door34" Target="Door50.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="451" Y="653"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Door34" Target="Room1.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="448" Y="590"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Door34" Target="Room5.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="572" Y="486"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Door45" Target="Door50.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="417" Y="835"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Door45" Target="Door50.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="295" Y="860"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Door45" Target="Room1.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="355" Y="937"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Door45" Target="Room5.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="465" Y="850"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Door50" Target="Door50.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="120" Y="518"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Door50" Target="Door50.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="185" Y="732"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Door50" Target="Room1.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50.Door50" Target="Room5.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="238" Y="595"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Room1" Target="Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="142" Y="519"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Room1" Target="Door50.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="143" Y="307"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Room1" Target="Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="83" Y="463"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Room1" Target="Room5.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="210" Y="347"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Room2" Target="Door50.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="214" Y="175"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Room2" Target="Door50.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="125" Y="300"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Room2" Target="Room1.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="129" Y="276"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Room2" Target="Room5.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="257" Y="161"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Room3" Target="Door50.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="330" Y="232"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Room3" Target="Door50.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="445" Y="403"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Room3" Target="Room1.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50.Room3" Target="Room5.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="493" Y="244"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Room4" Target="Door50.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="473" Y="653"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Room4" Target="Door50.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="400" Y="822"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Room4" Target="Room1.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="451" Y="830"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Room4" Target="Room5.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="547" Y="727"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Room5" Target="Door50.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="306" Y="842"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Room5" Target="Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="205" Y="723"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Room5" Target="Room1.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="226" Y="875"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Door50.Room5" Target="Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="337" Y="775"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Door23" Target="Door50.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="226" Y="218"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Door23" Target="Room1.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="147" Y="317"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Door23" Target="Room1.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="250" Y="333"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Door23" Target="Room2.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="230" Y="348"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Door34" Target="Door50.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="429" Y="579"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Door34" Target="Room1.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="371" Y="498"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Door34" Target="Room1.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="412" Y="769"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Door34" Target="Room2.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="471" Y="677"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Door45" Target="Door50.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="334" Y="930"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Door45" Target="Room1.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="387" Y="942"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Door45" Target="Room1.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="253" Y="971"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Door45" Target="Room2.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="368" Y="1040"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Door50" Target="Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="106" Y="687"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Door50" Target="Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="67" Y="634"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Door50" Target="Room1.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="121" Y="849"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Door50" Target="Room2.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="115" Y="797"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Room1" Target="Door50.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="63" Y="451"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Room1" Target="Room1.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="46" Y="638"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Room1" Target="Room1.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="69" Y="430"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Room1" Target="Room2.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="72" Y="571"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Room2" Target="Door50.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="110" Y="266"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Room2" Target="Room1.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="137" Y="297"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Room2" Target="Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="48" Y="425"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Room2" Target="Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="125" Y="393"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Room3" Target="Door50.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="348" Y="314"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Room3" Target="Room1.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="263" Y="316"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Room3" Target="Room1.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="350" Y="502"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Room3" Target="Room2.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="368" Y="440"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Room4" Target="Door50.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="430" Y="823"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Room4" Target="Room1.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="410" Y="750"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Room4" Target="Room1.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="371" Y="927"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Room4" Target="Room2.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="465" Y="931"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Room5" Target="Door50.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="206" Y="866"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Room5" Target="Room1.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="263" Y="952"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Room5" Target="Room1.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="140" Y="839"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room1.Room5" Target="Room2.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="226" Y="987"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Door23" Target="Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="393" Y="388"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Door23" Target="Room1.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="247" Y="334"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Door23" Target="Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="233" Y="425"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Door23" Target="Room2.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="340" Y="456"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Door34" Target="Door23.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="619" Y="742"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Door34" Target="Room1.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="453" Y="690"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Door34" Target="Room2.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="475" Y="612"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Door34" Target="Room2.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="528" Y="846"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Door45" Target="Door23.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="529" Y="1072"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Door45" Target="Room1.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="382" Y="1023"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Door45" Target="Room2.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="482" Y="1023"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Door45" Target="Room2.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="350" Y="1060"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Door50" Target="Door23.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="269" Y="822"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Door50" Target="Room1.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="129" Y="781"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Door50" Target="Room2.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="148" Y="713"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Door50" Target="Room2.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="233" Y="921"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Room1" Target="Door23.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="220" Y="597"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Room1" Target="Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="87" Y="554"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Room1" Target="Room2.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="128" Y="713"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Room1" Target="Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="156" Y="520"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Room2" Target="Door23.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="283" Y="425"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Room2" Target="Room1.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="141" Y="379"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Room2" Target="Room2.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="225" Y="404"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Room2" Target="Room2.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="136" Y="513"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Room3" Target="Door23.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="531" Y="506"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Room3" Target="Room1.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="357" Y="425"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Room3" Target="Room2.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="353" Y="439"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Room3" Target="Room2.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="454" Y="617"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Room4" Target="Door23.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="616" Y="968"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Room4" Target="Room1.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room4" Target="Room2.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="507" Y="846"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Room4" Target="Room2.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="466" Y="1009"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Room5" Target="Door23.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="395" Y="1018"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Room5" Target="Room1.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="241" Y="972"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Room5" Target="Room2.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="358" Y="1041"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room2.Room5" Target="Room2.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="213" Y="924"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Door23" Target="Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="620" Y="359"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Door23" Target="Door34.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="807" Y="284"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Door23" Target="Room3.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="682" Y="365"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Door23" Target="Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Door34" Target="Door23.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="826" Y="748"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Door34" Target="Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Door34" Target="Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="920" Y="578"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Door34" Target="Room3.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="941" Y="804"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Door45" Target="Door23.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="735" Y="1042"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Door45" Target="Door34.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="910" Y="950"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Door45" Target="Room3.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="894" Y="971"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Door45" Target="Room3.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="779" Y="991"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Door50" Target="Door23.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="483" Y="792"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Door50" Target="Door34.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Door50" Target="Room3.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="600" Y="665"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Door50" Target="Room3.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="680" Y="856"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Room1" Target="Door23.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="438" Y="576"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Room1" Target="Door34.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="642" Y="482"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Room1" Target="Room3.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="578" Y="669"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Room1" Target="Room3.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="598" Y="468"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Room2" Target="Door23.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="490" Y="398"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Room2" Target="Door34.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="693" Y="301"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Room2" Target="Room3.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="674" Y="346"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Room2" Target="Room3.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="580" Y="455"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Room3" Target="Door23.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="757" Y="497"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Room3" Target="Door34.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="928" Y="414"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Room3" Target="Room3.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="816" Y="401"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Room3" Target="Room3.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="900" Y="586"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Room4" Target="Door23.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="812" Y="947"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Room4" Target="Door34.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="984" Y="843"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Room4" Target="Room3.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room4" Target="Room3.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="876" Y="958"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Room5" Target="Door23.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="613" Y="979"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Room5" Target="Door34.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="788" Y="887"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Room5" Target="Room3.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="789" Y="971"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room3.Room5" Target="Room3.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="662" Y="868"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Door23" Target="Door34.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="885" Y="175"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Door23" Target="Door45.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="777" Y="70"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Door23" Target="Room4.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="802" Y="131"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Door23" Target="Room4.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="914" Y="185"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Door34" Target="Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1050" Y="518"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Door34" Target="Door45.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="968" Y="420"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Door34" Target="Room4.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1008" Y="357"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Door34" Target="Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1051" Y="568"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Door45" Target="Door34.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="966" Y="839"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Door45" Target="Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="875" Y="754"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Door45" Target="Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1013" Y="732"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Door45" Target="Room4.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="898" Y="762"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Door50" Target="Door34.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="740" Y="597"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Door50" Target="Door45.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="650" Y="498"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Door50" Target="Room4.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="721" Y="426"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Door50" Target="Room4.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="804" Y="625"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Room1" Target="Door34.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="723" Y="361"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Room1" Target="Door45.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="614" Y="265"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Room1" Target="Room4.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="704" Y="417"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Room1" Target="Room4.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="730" Y="220"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Room2" Target="Door34.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="746" Y="195"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Room2" Target="Door45.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="663" Y="95"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Room2" Target="Room4.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="800" Y="110"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Room2" Target="Room4.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="709" Y="214"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Room3" Target="Door34.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1002" Y="303"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Room3" Target="Door45.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="900" Y="201"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Room3" Target="Room4.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="930" Y="171"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Room3" Target="Room4.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1026" Y="348"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Room4" Target="Door34.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1044" Y="726"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Room4" Target="Door45.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="960" Y="629"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Room4" Target="Room4.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1032" Y="562"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Room4" Target="Room4.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="995" Y="720"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Room5" Target="Door34.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room5" Target="Door45.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="759" Y="694"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Room5" Target="Room4.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="908" Y="742"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room4.Room5" Target="Room4.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Door23" Target="Door45.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="571" Y="47"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Door23" Target="Door50.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="370" Y="113"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Door23" Target="Room5.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="409" Y="96"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Door23" Target="Room5.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="531" Y="127"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Door34" Target="Door45.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="767" Y="405"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Door34" Target="Door50.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="555" Y="495"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Door34" Target="Room5.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="624" Y="323"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Door34" Target="Room5.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="631" Y="555"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Door45" Target="Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="668" Y="771"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Door45" Target="Door50.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Door45" Target="Room5.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="600" Y="736"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Door45" Target="Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Door50" Target="Door45.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="428" Y="518"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Door50" Target="Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="226" Y="576"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Door50" Target="Room5.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="302" Y="418"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Door50" Target="Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="357" Y="634"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Room1" Target="Door45.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="405" Y="252"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Room1" Target="Door50.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="199" Y="330"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Room1" Target="Room5.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="302" Y="399"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Room1" Target="Room5.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room2" Target="Door45.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="467" Y="87"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Room2" Target="Door50.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="248" Y="143"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Room2" Target="Room5.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="402" Y="75"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Room2" Target="Room5.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="313" Y="192"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Room3" Target="Door45.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="694" Y="177"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Room3" Target="Door50.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="482" Y="226"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Room3" Target="Room5.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room3" Target="Room5.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="618" Y="305"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Room4" Target="Door45.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="752" Y="622"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Room4" Target="Door50.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="535" Y="702"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Room4" Target="Room5.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="633" Y="536"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Room4" Target="Room5.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="581" Y="725"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Room5" Target="Door45.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="537" Y="692"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Room5" Target="Door50.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="327" Y="755"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Room5" Target="Room5.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="478" Y="766"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="Room5.Room5" Target="Room5.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+<SimpleComponent Kind="SUPERVISOR" Name="sup(Gato_Porta||Gato_Porta||Rato_Porta||Rato_Porta)">
+<Graph>
+<NodeList>
+<SimpleNode Name="Door23.Door23.Door34.Door34">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door23.Door23.Door45.Door45">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door23.Door23.Door50.Door50">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door23.Door23.Room4.Room4">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door23.Door23.Room5.Room5">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door34.Door34.Door23.Door23">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door34.Door34.Door45.Door45">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door34.Door34.Door50.Door50">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door34.Door34.Room1.Room1">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door34.Door34.Room2.Room2">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door34.Door34.Room5.Room5">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door45.Door45.Door23.Door23">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door45.Door45.Door34.Door34">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door45.Door45.Door50.Door50">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door45.Door45.Room1.Room1">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door45.Door45.Room2.Room2">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door45.Door45.Room3.Room3">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door50.Door50.Door23.Door23">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door50.Door50.Door34.Door34">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door50.Door50.Door45.Door45">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door50.Door50.Room3.Room3">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Door50.Door50.Room4.Room4">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room1.Room1.Door23.Door23">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room1.Room1.Door34.Door34">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room1.Room1.Door45.Door45">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room1.Room1.Door50.Door50">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Initial="true" Name="Room1.Room1.Room3.Room3">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room1.Room1.Room4.Room4">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room1.Room1.Room5.Room5">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room2.Room2.Door23.Door23">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room2.Room2.Door34.Door34">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room2.Room2.Door45.Door45">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room2.Room2.Door50.Door50">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room2.Room2.Room3.Room3">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room2.Room2.Room4.Room4">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room2.Room2.Room5.Room5">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room3.Room3.Door23.Door23">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room3.Room3.Door34.Door34">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room3.Room3.Door45.Door45">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room3.Room3.Door50.Door50">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room3.Room3.Room1.Room1">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room3.Room3.Room2.Room2">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room3.Room3.Room4.Room4">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room3.Room3.Room5.Room5">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room4.Room4.Door23.Door23">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room4.Room4.Door34.Door34">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room4.Room4.Door45.Door45">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room4.Room4.Door50.Door50">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room4.Room4.Room1.Room1">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room4.Room4.Room2.Room2">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room4.Room4.Room3.Room3">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room4.Room4.Room5.Room5">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room5.Room5.Door23.Door23">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room5.Room5.Door34.Door34">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room5.Room5.Door45.Door45">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room5.Room5.Door50.Door50">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room5.Room5.Room1.Room1">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room5.Room5.Room2.Room2">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room5.Room5.Room3.Room3">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+<SimpleNode Name="Room5.Room5.Room4.Room4">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="Door23.Door23.Door34.Door34" Target="Door23.Door23.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door23.Door23.Door34.Door34" Target="Room2.Room2.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door23.Door23.Door34.Door34" Target="Room3.Room3.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door23.Door23.Door45.Door45" Target="Door23.Door23.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door23.Door23.Door45.Door45" Target="Door23.Door23.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door23.Door23.Door45.Door45" Target="Room2.Room2.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door23.Door23.Door45.Door45" Target="Room3.Room3.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door23.Door23.Door50.Door50" Target="Door23.Door23.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door23.Door23.Door50.Door50" Target="Room2.Room2.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door23.Door23.Door50.Door50" Target="Room3.Room3.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door23.Door23.Room4.Room4" Target="Door23.Door23.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door23.Door23.Room4.Room4" Target="Door23.Door23.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door23.Door23.Room4.Room4" Target="Room2.Room2.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door23.Door23.Room4.Room4" Target="Room3.Room3.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door23.Door23.Room5.Room5" Target="Door23.Door23.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door23.Door23.Room5.Room5" Target="Door23.Door23.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door23.Door23.Room5.Room5" Target="Room2.Room2.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door23.Door23.Room5.Room5" Target="Room3.Room3.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Door23.Door23" Target="Door34.Door34.Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Door23.Door23" Target="Room3.Room3.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Door23.Door23" Target="Room4.Room4.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Door45.Door45" Target="Door34.Door34.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Door45.Door45" Target="Room3.Room3.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Door45.Door45" Target="Room4.Room4.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Door50.Door50" Target="Door34.Door34.Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Door50.Door50" Target="Door34.Door34.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Door50.Door50" Target="Room3.Room3.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Door50.Door50" Target="Room4.Room4.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Room1.Room1" Target="Door34.Door34.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Room1.Room1" Target="Door34.Door34.Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Room1.Room1" Target="Room3.Room3.Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Room1.Room1" Target="Room4.Room4.Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Room2.Room2" Target="Door34.Door34.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Room2.Room2" Target="Door34.Door34.Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Room2.Room2" Target="Room3.Room3.Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Room2.Room2" Target="Room4.Room4.Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Room5.Room5" Target="Door34.Door34.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Room5.Room5" Target="Door34.Door34.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Room5.Room5" Target="Room3.Room3.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door34.Door34.Room5.Room5" Target="Room4.Room4.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Door23.Door23" Target="Door45.Door45.Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Door23.Door23" Target="Door45.Door45.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Door23.Door23" Target="Room4.Room4.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Door23.Door23" Target="Room5.Room5.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Door34.Door34" Target="Door45.Door45.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Door34.Door34" Target="Room4.Room4.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Door34.Door34" Target="Room5.Room5.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Door50.Door50" Target="Door45.Door45.Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Door50.Door50" Target="Room4.Room4.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Door50.Door50" Target="Room5.Room5.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Room1.Room1" Target="Door45.Door45.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Room1.Room1" Target="Door45.Door45.Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Room1.Room1" Target="Room4.Room4.Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Room1.Room1" Target="Room5.Room5.Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Room2.Room2" Target="Door45.Door45.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Room2.Room2" Target="Door45.Door45.Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Room2.Room2" Target="Room4.Room4.Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Room2.Room2" Target="Room5.Room5.Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Room3.Room3" Target="Door45.Door45.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Room3.Room3" Target="Door45.Door45.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Room3.Room3" Target="Room4.Room4.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door45.Door45.Room3.Room3" Target="Room5.Room5.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50.Door50.Door23.Door23" Target="Door50.Door50.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50.Door50.Door23.Door23" Target="Room1.Room1.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50.Door50.Door23.Door23" Target="Room5.Room5.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50.Door50.Door34.Door34" Target="Door50.Door50.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50.Door50.Door34.Door34" Target="Door50.Door50.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50.Door50.Door34.Door34" Target="Room1.Room1.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50.Door50.Door34.Door34" Target="Room5.Room5.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50.Door50.Door45.Door45" Target="Door50.Door50.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50.Door50.Door45.Door45" Target="Room1.Room1.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50.Door50.Door45.Door45" Target="Room5.Room5.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50.Door50.Room3.Room3" Target="Door50.Door50.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50.Door50.Room3.Room3" Target="Door50.Door50.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50.Door50.Room3.Room3" Target="Room1.Room1.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50.Door50.Room3.Room3" Target="Room5.Room5.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50.Door50.Room4.Room4" Target="Door50.Door50.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50.Door50.Room4.Room4" Target="Door50.Door50.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50.Door50.Room4.Room4" Target="Room1.Room1.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedRGato"/>
+<SimpleIdentifier Name="DoorIsOpenLGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Door50.Door50.Room4.Room4" Target="Room5.Room5.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedLGato"/>
+<SimpleIdentifier Name="DoorIsOpenRGato"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Door23.Door23" Target="Door50.Door50.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Door23.Door23" Target="Room1.Room1.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Door23.Door23" Target="Room2.Room2.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Door34.Door34" Target="Door50.Door50.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Door34.Door34" Target="Room1.Room1.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Door34.Door34" Target="Room1.Room1.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Door34.Door34" Target="Room2.Room2.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Door45.Door45" Target="Door50.Door50.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Door45.Door45" Target="Room1.Room1.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Door45.Door45" Target="Room1.Room1.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Door45.Door45" Target="Room2.Room2.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Door50.Door50" Target="Room1.Room1.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Door50.Door50" Target="Room2.Room2.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Room3.Room3" Target="Door50.Door50.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Room3.Room3" Target="Room1.Room1.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Room3.Room3" Target="Room1.Room1.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Room3.Room3" Target="Room2.Room2.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Room4.Room4" Target="Door50.Door50.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Room4.Room4" Target="Room1.Room1.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Room4.Room4" Target="Room1.Room1.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Room4.Room4" Target="Room2.Room2.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Room5.Room5" Target="Room1.Room1.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Room5.Room5" Target="Room1.Room1.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room1.Room1.Room5.Room5" Target="Room2.Room2.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Door23.Door23" Target="Room1.Room1.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Door23.Door23" Target="Room2.Room2.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Door34.Door34" Target="Door23.Door23.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Door34.Door34" Target="Room1.Room1.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Door34.Door34" Target="Room2.Room2.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Door34.Door34" Target="Room2.Room2.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Door45.Door45" Target="Door23.Door23.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Door45.Door45" Target="Room1.Room1.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Door45.Door45" Target="Room2.Room2.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Door45.Door45" Target="Room2.Room2.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Door50.Door50" Target="Door23.Door23.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Door50.Door50" Target="Room1.Room1.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Door50.Door50" Target="Room2.Room2.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Room3.Room3" Target="Room1.Room1.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Room3.Room3" Target="Room2.Room2.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Room3.Room3" Target="Room2.Room2.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Room4.Room4" Target="Door23.Door23.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Room4.Room4" Target="Room1.Room1.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Room4.Room4" Target="Room2.Room2.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Room4.Room4" Target="Room2.Room2.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Room5.Room5" Target="Door23.Door23.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Room5.Room5" Target="Room1.Room1.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Room5.Room5" Target="Room2.Room2.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room2.Room2.Room5.Room5" Target="Room2.Room2.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Door23.Door23" Target="Door34.Door34.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Door23.Door23" Target="Room3.Room3.Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Door34.Door34" Target="Door23.Door23.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Door34.Door34" Target="Room3.Room3.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Door45.Door45" Target="Door23.Door23.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Door45.Door45" Target="Door34.Door34.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Door45.Door45" Target="Room3.Room3.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Door45.Door45" Target="Room3.Room3.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Door50.Door50" Target="Door23.Door23.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Door50.Door50" Target="Door34.Door34.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Door50.Door50" Target="Room3.Room3.Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Door50.Door50" Target="Room3.Room3.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Room1.Room1" Target="Door34.Door34.Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Room1.Room1" Target="Room3.Room3.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Room1.Room1" Target="Room3.Room3.Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Room2.Room2" Target="Door34.Door34.Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Room2.Room2" Target="Room3.Room3.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Room2.Room2" Target="Room3.Room3.Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Room4.Room4" Target="Door23.Door23.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Room4.Room4" Target="Room3.Room3.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Room4.Room4" Target="Room3.Room3.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Room5.Room5" Target="Door23.Door23.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Room5.Room5" Target="Door34.Door34.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Room5.Room5" Target="Room3.Room3.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room3.Room3.Room5.Room5" Target="Room3.Room3.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Door23.Door23" Target="Door34.Door34.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Door23.Door23" Target="Door45.Door45.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Door23.Door23" Target="Room4.Room4.Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Door23.Door23" Target="Room4.Room4.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Door34.Door34" Target="Door45.Door45.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Door34.Door34" Target="Room4.Room4.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Door45.Door45" Target="Door34.Door34.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Door45.Door45" Target="Room4.Room4.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Door50.Door50" Target="Door34.Door34.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Door50.Door50" Target="Door45.Door45.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Door50.Door50" Target="Room4.Room4.Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Door50.Door50" Target="Room4.Room4.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Room1.Room1" Target="Door34.Door34.Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Room1.Room1" Target="Door45.Door45.Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Room1.Room1" Target="Room4.Room4.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Room1.Room1" Target="Room4.Room4.Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Room2.Room2" Target="Door34.Door34.Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Room2.Room2" Target="Door45.Door45.Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Room2.Room2" Target="Room4.Room4.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Room2.Room2" Target="Room4.Room4.Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Room3.Room3" Target="Door45.Door45.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Room3.Room3" Target="Room4.Room4.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Room3.Room3" Target="Room4.Room4.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Room5.Room5" Target="Door34.Door34.Room5.Room5">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Room5.Room5" Target="Room4.Room4.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room4.Room4.Room5.Room5" Target="Room4.Room4.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Door23.Door23" Target="Door45.Door45.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Door23.Door23" Target="Door50.Door50.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Door23.Door23" Target="Room5.Room5.Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Door23.Door23" Target="Room5.Room5.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Door34.Door34" Target="Door45.Door45.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Door34.Door34" Target="Door50.Door50.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Door34.Door34" Target="Room5.Room5.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Door34.Door34" Target="Room5.Room5.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Door45.Door45" Target="Door50.Door50.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Door45.Door45" Target="Room5.Room5.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedL"/>
+<SimpleIdentifier Name="DoorIsOpenR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Door50.Door50" Target="Door45.Door45.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Door50.Door50" Target="Room5.Room5.Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="DoorIsClosedR"/>
+<SimpleIdentifier Name="DoorIsOpenL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Room1.Room1" Target="Door45.Door45.Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Room1.Room1" Target="Room5.Room5.Door50.Door50">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Room1.Room1" Target="Room5.Room5.Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Room2.Room2" Target="Door45.Door45.Room2.Room2">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Room2.Room2" Target="Room5.Room5.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Room2.Room2" Target="Room5.Room5.Room1.Room1">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Room3.Room3" Target="Door45.Door45.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="GatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Room3.Room3" Target="Door50.Door50.Room3.Room3">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Room3.Room3" Target="Room5.Room5.Door23.Door23">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Room3.Room3" Target="Room5.Room5.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Room4.Room4" Target="Door50.Door50.Room4.Room4">
+<LabelBlock>
+<SimpleIdentifier Name="GatoL"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Room4.Room4" Target="Room5.Room5.Door34.Door34">
+<LabelBlock>
+<SimpleIdentifier Name="RatoR"/>
+</LabelBlock>
+</Edge>
+<Edge Source="Room5.Room5.Room4.Room4" Target="Room5.Room5.Door45.Door45">
+<LabelBlock>
+<SimpleIdentifier Name="RatoL"/>
+</LabelBlock>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+</ComponentList>
+</Module>
