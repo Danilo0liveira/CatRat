@@ -109,6 +109,7 @@
 
 <p align="center">Figura 11:  Simulação Estado 3</p>
 
-﻿# Link para o vídeo do YouTube
+# Link para o vídeo do YouTube
 
 https://youtu.be/y9Id18Df5ZI
+
